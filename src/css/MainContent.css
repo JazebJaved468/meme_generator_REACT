@@ -1,0 +1,24 @@
+.main-content-container{
+    width: 100%;
+    height: fit-content;
+    padding: 36px 36px 56px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid #000000; */
+}
+
+.input-fields-container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    gap: 12px;
+}
+
+.button-container{
+    margin-bottom: 36px;
+}
+
+/* Meme Image Container styling is in its own file */
+
