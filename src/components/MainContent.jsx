@@ -8,7 +8,7 @@ import memeData from "../data/memesData";
 
 export default function MainContent() {
 
-    const [memeURL, setMemeURL] = React.useState('src/images/memeimg.png');
+    const [memeURL, setMemeURL] = React.useState('./src/images/memeimg.png');
 
     function getNewImage() {
 
