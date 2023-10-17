@@ -5,10 +5,11 @@ import Button from "./Button";
 import InputField from "./InputField";
 import MemeImage from "./MemeImage";
 import memeData from "../data/memesData";
+import memeImg from "../images/memeimg.png";
 
 export default function MainContent() {
 
-    const [memeURL, setMemeURL] = React.useState('./src/images/memeimg.png');
+    const [memeURL, setMemeURL] = React.useState(memeImg);
 
     function getNewImage() {
 
