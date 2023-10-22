@@ -4,27 +4,37 @@ import "../css/MainContent.css";
 import Button from "./Button";
 import InputField from "./InputField";
 import MemeImage from "./MemeImage";
-import memeData from "../data/memesData";
 import memeImg from "../images/memeimg.png";
 
 export default function MainContent() {
 
-    // setting state for the meme object
+  // setting state for the meme object
   const [meme, setMeme] = React.useState({
     text1: "",
     text2: "",
     randomMeme: memeImg,
   });
 
+  // setting state for the memeData array
+  const [memeData, setMemeData] = React.useState([]);
+
+
+  // Fetching data from the API
+  React.useEffect(() =>{
+    fetch("https://api.imgflip.com/get_memes")
+      .then((response) => response.json())
+      .then((data) => setMemeData(data["data"]["memes"]));
+  }, []);
+
+  // Function to get a new image on pressing button
   function getNewImage() {
-    // Get all memes from the memeData array
-    let allMemes = memeData["data"]["memes"];
+
 
     // Get a random meme from the allMemes array
-    let randomMeme = Math.floor(Math.random() * allMemes.length);
+    let randomMeme = Math.floor(Math.random() * memeData.length);
 
     // Get the meme url of the random meme
-    let url = allMemes[randomMeme]["url"];
+    let url = memeData[randomMeme]["url"];
 
     // console.log(memeURL);
     setMeme((prevMeme) => {
@@ -35,6 +45,7 @@ export default function MainContent() {
     });
   }
 
+  // Function to handle change in the input fields
   function handleChange(event) {
     const { name, value } = event.target;
     setMeme((prevMeme) => {
@@ -45,6 +56,7 @@ export default function MainContent() {
     });
   }
 
+  // UI rendering
   return (
     <>
       <section className="main-content-container">
