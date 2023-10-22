@@ -5,7 +5,14 @@ import "../css/InputField.css";
 export default function InputField(props) {
   return (
     <>
-        <input type="text" placeholder={props.placeHolder} className="input-field" />
+      <input
+        type="text"
+        name={props.name}
+        placeholder={props.placeHolder}
+        className="input-field"
+        onChange={props.onChange}
+        value={props.value}
+      />
     </>
   );
 }

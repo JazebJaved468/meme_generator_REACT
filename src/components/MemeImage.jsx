@@ -11,9 +11,9 @@ export default function MemeImage(props) {
       {/* Image */}
       <img src={props.imgPath} className="meme-img" alt="meme" />
       {/* Text 1 */}
-      <p className="meme-text meme-text-1"> text 1</p>
+      <p className="meme-text meme-text-1"> {props.text1}</p>
       {/* Text 2 */}
-      <p className="meme-text meme-text-2"> text 2</p>
+      <p className="meme-text meme-text-2">{props.text2}</p>
     </div>
   );
 }
